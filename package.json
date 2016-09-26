@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack-dev-server --content-base client/ --hot --inline",
     "start": "webpack --watch & node server/server",
-    "test": "tape -r babel-register 'test/**/*.test.js' | tap-spec"
+    "test": "tape -r babel-register 'test/**/*.test.js' | tap-spec",
+    "knex": "knex"
   },
   "babel": {
     "presets": [
@@ -34,6 +35,8 @@
   },
   "dependencies": {
     "body-parser": "^1.15.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "knex": "^0.12.1",
+    "sqlite3": "^3.1.4"
   }
 }
