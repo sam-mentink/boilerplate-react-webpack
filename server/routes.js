@@ -8,11 +8,8 @@ module.exports = {
 
 function getTodo(req, res) {
   db.getTodo()
-    .then(function (todo) {
-      var vm = {
-        todo: todo
-      }
-      res.send(vm)
+    .then(function (todos) {
+      res.json(todos)
     })
     .catch(console.error)
 }

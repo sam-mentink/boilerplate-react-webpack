@@ -4,7 +4,7 @@ export default React.createClass({
   render() {
     return (
       <div id="item">
-         <input type="checkbox" /> {this.props.text}
+         <input type="checkbox" /> {this.props.todo}
       </div>
     )
   }

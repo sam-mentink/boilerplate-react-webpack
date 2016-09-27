@@ -5,7 +5,12 @@ export default React.createClass({
   render() {
     return (
       <div id="Item-List">
-        <Todoitem text={this.props.text}/>
+        {this.props.todos.map((todo) => {
+          return <Todoitem
+            key={todo.id}
+            todo={todo.todo}
+            isComplete={todo.isComplete} />
+        })}
       </div>
     )
   }
