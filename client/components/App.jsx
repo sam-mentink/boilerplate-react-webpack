@@ -1,4 +1,6 @@
 import React from 'react'
+import request from 'superagent'
+
 import Header from './Header'
 import Addtodo from './Addtodo'
 import Todolist from './Todolist'
@@ -8,9 +10,9 @@ let data = []
 request
   .get('http://localhost:3000/todo')
   .end((err, res) => {
-    console.log(res)
     if(!err) {
       data = res.body
+      console.log(data)
     }
   })
 
