@@ -4,8 +4,6 @@ export default {
   getTodos: getTodos
 }
 
-
-
 function getTodos (cb) {
   let data = []
   request
@@ -13,7 +11,6 @@ function getTodos (cb) {
     .end((err, res) => {
       if(!err) {
         data = res.body
-        // console.log(data)
         cb(null, data)
       } else  {
         cb(err)
