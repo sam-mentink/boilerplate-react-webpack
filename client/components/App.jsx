@@ -17,18 +17,21 @@ export default React.createClass({
     todoapi.getTodos(this.renderTodos)
   },
 
-  renderTodos (err, todos) {
-    this.setState({
-      todos: todos
-    })
+  addTodo (data) {
+    todoapi.addTodo(data)
   },
+
+  renderTodos (err, todos) {
+    this.setState({ todos: todos })
+  },
+
+
 
   render() {
     return (
       <div>
-        <p>Todo Here: </p>
       <Header text="🚬 This to-do list will make you wanna... 🚬" />
-      <Addtodo />
+      <Addtodo addTodo={this.addTodo} />
       <Todolist todos={this.state.todos} />
       </div>
     )

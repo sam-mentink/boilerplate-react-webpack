@@ -16,7 +16,7 @@ function getTodo(req, res) {
 
 function add(req, res) {
   var newTodo = {
-    todo: req.body.todo,
+    todo: req.body.text,
     isComplete: false
   }
   db.add(newTodo)

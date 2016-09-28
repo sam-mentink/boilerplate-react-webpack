@@ -1,13 +1,14 @@
 import request from 'superagent'
 
 export default {
-  getTodos: getTodos
+  getTodos: getTodos,
+  addTodo: addTodo
 }
 
 function getTodos (cb) {
   let data = []
   request
-    .get('http://localhost:3000/todo')
+    .get('/todo')
     .end((err, res) => {
       if(!err) {
         data = res.body
@@ -16,4 +17,11 @@ function getTodos (cb) {
         cb(err)
       }
     })
+}
+
+function addTodo (text) {
+  request
+  .post('/add')
+  .send({text: text})
+  .end()
 }
