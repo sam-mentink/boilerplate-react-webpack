@@ -19,9 +19,13 @@ function getTodos (cb) {
     })
 }
 
-function addTodo (text) {
+function addTodo (text, cb) {
   request
   .post('/add')
   .send({text: text})
-  .end()
+  .end((err, res) => {
+    if(!err) {
+      cb()
+    }
+  })
 }

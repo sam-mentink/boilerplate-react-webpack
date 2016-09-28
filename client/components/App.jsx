@@ -14,25 +14,27 @@ export default React.createClass({
   },
 
   componentDidMount () {
+    this.getTodos()
+  },
+
+  getTodos () {
     todoapi.getTodos(this.renderTodos)
   },
 
   addTodo (data) {
-    todoapi.addTodo(data)
+    todoapi.addTodo(data, this.getTodos)
   },
 
   renderTodos (err, todos) {
     this.setState({ todos: todos })
   },
 
-
-
   render() {
     return (
       <div>
-      <Header text="🚬 This to-do list will make you wanna... 🚬" />
-      <Addtodo addTodo={this.addTodo} />
-      <Todolist todos={this.state.todos} />
+        <Header text="🚬 This to-do list will make you wanna... 🚬" />
+        <Addtodo addTodo={this.addTodo} />
+        <Todolist todos={this.state.todos} />
       </div>
     )
   }
